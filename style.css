@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    height: 100%;
+    font-family: "Microsoft YaHei", "宋体";
+    font-size: 16px;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game {
+    width: 700px;
+    height: 600px;
+    background-image: linear-gradient(to bottom, #442875, #3F51B5);
+    color: #eee;
+}
+
+#game #game_info {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+#game #game_info .game_info_left {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+}
+
+#game #game_info .game_info_line {
+    margin: 8px 0;
+}
+
+#game #game_info .game_info_line.btn {
+    width: 100px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #126dd0;
+    color: #eee;
+}
+
+#game #game_info .game_info_line.btn:hover {
+    background-color: #187fef;
+}
+
+#game #game_info .game_info_right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+#game #game_info .game_info_right img {
+    width: 100%;
+}
+
+#game #game_box {
+    position: relative;
+    display: none;
+}
+
+#game #game_box .game_box_line {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+}
