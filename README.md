@@ -38,7 +38,7 @@
 
 ### 4. 游戏结束
  游戏失败或通过全部关卡时 游戏结束
-![游戏结束](./result/game-failed.png)
+![游戏结束](./result/game-end.png)
 
 ## 自定义配置
 ``` javascript
