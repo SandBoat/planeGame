@@ -180,7 +180,6 @@ class PlaneGame {
     constructor(config) {
         // 游戏默认配置
         this.config = {
-            status: 'start', // 游戏开始默认为开始中
             level: 1, // 游戏默认等级
             totalLevel: 6, // 总共6关
             numPerLine: 6, // 游戏默认每行多少个怪兽
@@ -354,8 +353,12 @@ class PlaneGame {
         if (this.plane.x + this.plane.move >= this.config.canvasPadding && this.plane.x + this.plane.move <= (700 - this.config.canvasPadding - this.planeImg.width)) this.plane.x += this.plane.move;
         this.ctx.drawImage(this.planeImg, this.plane.x, this.plane.y, this.planeImg.width, this.planeImg.height);
         // 绘制怪兽
-        if (this.enemy.enemys.length == 0) {
-            this.gameNextLevel(++this.nowLevel);
+        if (this.enemy.liveEnemyNum() == 0) {
+            if (++this.nowLevel <= this.config.totalLevel) {
+                this.gameNextLevel(this.nowLevel);
+            } else {
+                this.gameEnd();
+            }
             return;
         }
         this.enemy.draw();
